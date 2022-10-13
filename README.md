@@ -4,7 +4,7 @@
 
 The current version of the configuration file has two functions:
 1. It changes the appearance of powershell prompt:
-   - Only name of the current directory is shown. E.g. `projects` instead of `C:\Users\username\username` is displayed.
+   - Only name of the current directory is shown. E.g. `projects` instead of `C:\Users\username\username\projects` is displayed.
    - If the current directory is the home directory, the symbol "`~`" shown. E.g. `~` instead of `username` is displayed.
    - If the current directory is a git repository, the name of the active branch is displayed. 
 2. It defines some useful commands and aliases:
