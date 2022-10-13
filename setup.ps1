@@ -1,1 +1,2 @@
-﻿cp Microsoft.PowerShell_profile.ps1 $profile
+﻿New-Item -Path $profile -Type File -Force
+cp Microsoft.PowerShell_profile.ps1 $profile
