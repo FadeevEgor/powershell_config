@@ -32,6 +32,7 @@ function prompt {
     # write all the information 
     write-host "$branchName" -NoNewLine -ForegroundColor Red
     write-host "$gitEmoji" -NoNewLine 
-    write-host "$directoryName$" -NoNewline -ForegroundColor DarkYellow
+    write-host "$directoryName" -NoNewline -ForegroundColor DarkYellow
+    write-host "$" -NoNewline -ForegroundColor Green
     return " "
 }
