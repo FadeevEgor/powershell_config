@@ -20,18 +20,19 @@ function prompt {
     $isRepository = git rev-parse --is-inside-work-tree
     if ($isRepository){
         $branchName = git rev-parse --abbrev-ref HEAD
+        $anythinToCommit = git status --porcelain
+        if ($anythinToCommit){
+            $opts = @{ForegroundColor="red";}
+        } else {
+            $opts = @{ForegroundColor="darkgreen";}
+        }
         $gitEmojiCode= [System.Convert]::toInt32("2387", 16)
         $gitEmoji = [System.Char]::ConvertFromUtf32($gitEmojiCode)
-        
-    }
-    else{
-        $branchName = ""
-        $gitEmoji = ""
+        write-host  -NoNewLine @opts -object "$branchName"
+        write-host  -NoNewLine -object "$gitEmoji"      
     }
     
     # write all the information 
-    write-host "$branchName" -NoNewLine -ForegroundColor Red
-    write-host "$gitEmoji" -NoNewLine 
     write-host "$directoryName" -NoNewline -ForegroundColor DarkYellow
     write-host "$" -NoNewline -ForegroundColor Green
     return " "
