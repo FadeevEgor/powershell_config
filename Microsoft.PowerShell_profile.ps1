@@ -1,6 +1,6 @@
 # python virtual enviroment
-Set-Alias vrun .\venv\Scripts\activate # activate existing virtual environment
-function mkv{                          # create new virtual environment
+Set-Alias vrun .\venv\Scripts\activate # activate an existing virtual environment
+function mkv{                          # create a new virtual environment
     python -m venv venv
 }
 
@@ -29,7 +29,7 @@ function prompt {
         $gitEmojiCode= [System.Convert]::toInt32("2387", 16)
         $gitEmoji = [System.Char]::ConvertFromUtf32($gitEmojiCode)
         write-host  -NoNewLine @opts -object "$branchName"
-        write-host  -NoNewLine -object "$gitEmoji"      
+        write-host  -NoNewLine -object "$gitEmoji" -ForegroundColor Blue   
     }
     
     # write all the information 
