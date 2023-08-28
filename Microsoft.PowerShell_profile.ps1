@@ -1,8 +1,21 @@
 # python virtual enviroment
-Set-Alias vrun .\venv\Scripts\activate # activate an existing virtual environment
-function mkv{                          # create a new virtual environment
+# 1. activate an existing virtual environment
+function vrun { 
+    $venvBinDirectory = "$(Get-Location)\venv\bin"
+    # $venvBinDirectory = "$(Get-Location)\venv\Scrpits" 
+    if (Test-Path -Path $venvBinDirectory){
+        .\venv\bin\activate
+    } else {
+        .\venv\Scripts\activate
+    }
+}
+
+# 2. create a new virtual environment
+function mkv{                         
     python -m venv venv
 }
+
+
 
 # command prompt configuration 
 function prompt {
